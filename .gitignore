@@ -56,3 +56,6 @@ typings/
 
 # next.js build output
 .next
+
+# gh-pages build output
+build/
