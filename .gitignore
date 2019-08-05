@@ -59,4 +59,10 @@ typings/
 
 # gh-pages build output
 build/
+<<<<<<< HEAD
 yarn.lock
+=======
+
+# yarn lock file
+yarn.lock
+>>>>>>> upgrade latest
