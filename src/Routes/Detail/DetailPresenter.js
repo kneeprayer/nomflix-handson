@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
-import Loader from "Components/Loader";
+import Loader from "../../Components/Loader";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -68,7 +68,7 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const DetailPresenter = ({ result, loading, error }) =>
+const DetailPresenter = ({ result, loading }) =>
   loading ? (
     <>
       <Helmet>
@@ -79,14 +79,9 @@ const DetailPresenter = ({ result, loading, error }) =>
   ) : (
     <Container>
       <Helmet>
-        <title>
-          {result.original_title ? result.original_title : result.original_name}{" "}
-          | Nomflix
-        </title>
+        <title>{result.original_title ? result.original_title : result.original_name} | Nomflix</title>
       </Helmet>
-      <Backdrop
-        bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}
-      />
+      <Backdrop bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`} />
       <Content>
         <Cover
           bgImage={
@@ -96,28 +91,18 @@ const DetailPresenter = ({ result, loading, error }) =>
           }
         />
         <Data>
-          <Title>
-            {result.original_title
-              ? result.original_title
-              : result.original_name}
-          </Title>
+          <Title>{result.original_title ? result.original_title : result.original_name}</Title>
           <ItemContainer>
             <Item>
-              {result.release_date
-                ? result.release_date.substring(0, 4)
-                : result.first_air_date.substring(0, 4)}
+              {result.release_date ? result.release_date.substring(0, 4) : result.first_air_date.substring(0, 4)}
             </Item>
             <Divider>•</Divider>
-            <Item>
-              {result.runtime ? result.runtime : result.episode_run_time[0]} min
-            </Item>
+            <Item>{result.runtime ? result.runtime : result.episode_run_time[0]} min</Item>
             <Divider>•</Divider>
             <Item>
               {result.genres &&
                 result.genres.map((genre, index) =>
-                  index === result.genres.length - 1
-                    ? genre.name
-                    : `${genre.name} / `
+                  index === result.genres.length - 1 ? genre.name : `${genre.name} / `
                 )}
             </Item>
           </ItemContainer>

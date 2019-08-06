@@ -1,6 +1,6 @@
 import React from "react";
 import HomePresenter from "./HomePresenter";
-import { moviesApi } from "api";
+import { moviesApi } from "../../api";
 
 export default class extends React.Component {
   state = {
@@ -41,13 +41,7 @@ export default class extends React.Component {
   render() {
     const { nowPlaying, upcoming, popular, error, loading } = this.state;
     return (
-      <HomePresenter
-        nowPlaying={nowPlaying}
-        upcoming={upcoming}
-        popular={popular}
-        error={error}
-        loading={loading}
-      />
+      <HomePresenter nowPlaying={nowPlaying} upcoming={upcoming} popular={popular} error={error} loading={loading} />
     );
   }
 }

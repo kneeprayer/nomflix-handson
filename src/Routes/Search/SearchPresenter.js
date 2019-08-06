@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
-import Loader from "Components/Loader";
-import Section from "Components/Section";
+import Loader from "../../Components/Loader";
+import Section from "../../Components/Section";
 import Message from "../../Components/Message";
 import Poster from "../../Components/Poster";
 
@@ -22,25 +22,13 @@ const Input = styled.input`
   width: 100%;
 `;
 
-const SearchPresenter = ({
-  movieResults,
-  tvResults,
-  loading,
-  searchTerm,
-  handleSubmit,
-  error,
-  updateTerm
-}) => (
+const SearchPresenter = ({ movieResults, tvResults, loading, searchTerm, handleSubmit, error, updateTerm }) => (
   <Container>
     <Helmet>
       <title>Search | Nomflix</title>
     </Helmet>
     <Form onSubmit={handleSubmit}>
-      <Input
-        placeholder="Search Movies or TV Shows..."
-        value={searchTerm}
-        onChange={updateTerm}
-      />
+      <Input placeholder="Search Movies or TV Shows..." value={searchTerm} onChange={updateTerm} />
     </Form>
     {loading ? (
       <Loader />
@@ -76,12 +64,9 @@ const SearchPresenter = ({
           </Section>
         )}
         {error && <Message color="#e74c3c" text={error} />}
-        {tvResults &&
-          movieResults &&
-          tvResults.length === 0 &&
-          movieResults.length === 0 && (
-            <Message text="Nothing found" color="#95a5a6" />
-          )}
+        {tvResults && movieResults && tvResults.length === 0 && movieResults.length === 0 && (
+          <Message text="Nothing found" color="#95a5a6" />
+        )}
       </>
     )}
   </Container>
