@@ -54,8 +54,6 @@ const Title = styled.h3`
   font-size: 32px;
 `;
 
-const Imdb = styled.div``;
-
 const ItemContainer = styled.div`
   margin: 20px 0;
 `;
@@ -116,19 +114,19 @@ const DetailPresenter = withRouter(({ location: { pathname }, result, loading })
           }
         />
         <Data>
-          <Title>{result.original_title ? result.original_title : result.original_name}</Title>
-          <Imdb>
+          <Title>
+            {result.original_title ? result.original_title : result.original_name}
             {result.imdb_id && (
               <a href={`https://www.imdb.com/title/${result.imdb_id}`}>
                 <img
                   src="https://m.media-amazon.com/images/G/01/IMDb/BG_rectangle._CB1509060989_SY230_SX307_AL_.png"
-                  alt="IMDb"
-                  height="21"
-                  width="42"
+                  alt="IMDb url"
+                  height="24"
+                  width="48"
                 />
               </a>
             )}
-          </Imdb>
+          </Title>
           <ItemContainer>
             <Item>
               {result.release_date ? result.release_date.substring(0, 4) : result.first_air_date.substring(0, 4)}
