@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-console */
 /* eslint-disable react/prop-types */
@@ -12,24 +13,22 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   background-image: url(${props => props.path});
-  margin-bottom: 500px;
+  margin-bottom: 200px;
 `;
 
 const Title = styled.h1`
-  position: fixed;
   color: #ffffff;
   top: 5px;
 `;
 
-const Overview = styled.h1`
-  position: fixed;
+const Overview = styled.span`
   color: #000000;
   justify-content: center;
   bottom: -5px;
 `;
 
 const SeasonInfo = ({ name, path, overview }) => (
-  <Container path={path}>
+  <Container path={path ? `https://image.tmdb.org/t/p/w300${path}` : require("../assets/noPosterSmall.jpg")}>
     <Title>{name}</Title>
     <Overview>{overview}</Overview>
   </Container>
@@ -53,14 +52,7 @@ const Seasons = ({ match }) => {
 
   return (
     <div>
-      {seasons &&
-        seasons.map(item => (
-          <SeasonInfo
-            name={item.name}
-            path={`//image.tmdb.org/t/p/w300/${item.poster_path}`}
-            overview={item.overview}
-          />
-        ))}
+      {seasons && seasons.map(item => <SeasonInfo name={item.name} path={item.poster_path} overview={item.overview} />)}
     </div>
   );
 };
