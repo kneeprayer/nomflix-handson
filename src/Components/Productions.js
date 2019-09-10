@@ -1,8 +1,10 @@
+/* eslint-disable no-console */
+/* eslint-disable react/prop-types */
 import React, { useEffect, useState } from "react";
 import { moviesApi, tvApi } from "../api";
 
 const Productions = ({ location, match }) => {
-  const [isMovie, setIsMovie] = useState(location.pathname.includes("/movie/"));
+  const [isMovie] = useState(location.pathname.includes("/movie/"));
   const [productions, setProductions] = useState(null);
   const [countries, setCountries] = useState(null);
   const parsedId = parseInt(match.params.id);

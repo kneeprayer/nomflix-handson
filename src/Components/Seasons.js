@@ -1,3 +1,7 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable no-console */
+/* eslint-disable react/prop-types */
+
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -25,12 +29,10 @@ const Overview = styled.h1`
 `;
 
 const SeasonInfo = ({ name, path, overview }) => (
-  <>
-    <Container path={path}>
-      <Title>{name}</Title>
-      <Overview>{overview}</Overview>
-    </Container>
-  </>
+  <Container path={path}>
+    <Title>{name}</Title>
+    <Overview>{overview}</Overview>
+  </Container>
 );
 
 const Seasons = ({ match }) => {
@@ -53,7 +55,6 @@ const Seasons = ({ match }) => {
     <div>
       {seasons &&
         seasons.map(item => (
-          // eslint-disable-next-line react/jsx-key
           <SeasonInfo
             name={item.name}
             path={`//image.tmdb.org/t/p/w300/${item.poster_path}`}
