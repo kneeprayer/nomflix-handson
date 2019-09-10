@@ -19,9 +19,9 @@ const Container = styled.div`
   background-image: url(${props => props.path});
   background-repeat: no-repeat;
   background-position: center top;
-  margin: 20px 0;
-  &:hover > span {
-    font-size: 20px;
+  margin: 20px 10;
+  padding: 10px;
+  &:hover > p {
     color: white;
   }
 `;
