@@ -9,15 +9,16 @@ import styled from "styled-components";
 import { tvApi } from "../api";
 
 const Container = styled.div`
-  width: 300px;
   display: flex;
+  width: 300px;
+  height: 100%;
   justify-content: center;
   background-image: url(${props => props.path});
-  margin-bottom: 200px;
+  margin-bottom: 10px;
 `;
 
 const Title = styled.h1`
-  color: #ffffff;
+  color: #000000;
   top: 5px;
 `;
 
