@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { movieApi, TVApi } from "../api";
+import { moviesApi, tvApi } from "../api";
 
 const Videos = ({ location, match }) => {
   const [isMovie, setIsMovie] = useState(location.pathname.includes("/movie/"));
@@ -14,14 +14,14 @@ const Videos = ({ location, match }) => {
             data: {
               videos: { results }
             }
-          } = await movieApi.movieDetail(parsedId);
+          } = await moviesApi.movieDetail(parsedId);
           setVideos(results);
         } else {
           const {
             data: {
               videos: { results }
             }
-          } = await TVApi.showDetail(parsedId);
+          } = await tvApi.showDetail(parsedId);
           setVideos(results);
         }
       } catch (e) {

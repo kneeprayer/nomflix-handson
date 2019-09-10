@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { movieApi, TVApi } from "../api";
+import { moviesApi, tvApi } from "../api";
 
 const Productions = ({ location, match }) => {
   const [isMovie, setIsMovie] = useState(location.pathname.includes("/movie/"));
@@ -11,11 +11,11 @@ const Productions = ({ location, match }) => {
     const callApi = async () => {
       try {
         if (isMovie) {
-          const { data } = await movieApi.movieDetail(parsedId);
+          const { data } = await moviesApi.movieDetail(parsedId);
           setProductions(data.production_companies);
           setCountries(data.production_countries);
         } else {
-          const { data } = await TVApi.showDetail(parsedId);
+          const { data } = await tvApi.showDetail(parsedId);
           setProductions(data.production_companies);
           setCountries(data.origin_country);
         }
