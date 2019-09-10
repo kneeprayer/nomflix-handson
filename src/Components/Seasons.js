@@ -11,31 +11,31 @@ import { tvApi } from "../api";
 const Container = styled.div`
   display: flex;
   width: 300px;
-  height: 480px;
+  min-height: 460px;
   justify-content: center;
   background-image: url(${props => props.path});
   background-repeat: no-repeat;
   background-position: center top;
   margin-bottom: 10px;
-  &:hover {
-    width: 500px;
-  }
 `;
 
 const Title = styled.h1`
   font-size: 18px;
+  color: red;
 `;
 
 const Overview = styled.span`
-  margin-top 10px;
-  font-size: 8px;
+  margin-top 50px;
+  font-size: 14px;
 `;
 
 const SeasonInfo = ({ name, path, overview }) => (
-  <Container path={path ? `https://image.tmdb.org/t/p/w300${path}` : require("../assets/noPosterSmall.jpg")}>
-    <Title>{name}</Title>
-    <Overview>{overview}</Overview>
-  </Container>
+  <li>
+    <Container path={path ? `https://image.tmdb.org/t/p/w300${path}` : require("../assets/noPosterSmall.jpg")}>
+      <Title>{name}</Title>
+      <Overview>{overview}</Overview>
+    </Container>
+  </li>
 );
 
 const Seasons = ({ match }) => {
@@ -56,7 +56,10 @@ const Seasons = ({ match }) => {
 
   return (
     <div>
-      {seasons && seasons.map(item => <SeasonInfo name={item.name} path={item.poster_path} overview={item.overview} />)}
+      <ul>
+        {seasons &&
+          seasons.map(item => <SeasonInfo name={item.name} path={item.poster_path} overview={item.overview} />)}
+      </ul>
     </div>
   );
 };
