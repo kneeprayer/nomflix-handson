@@ -14,26 +14,28 @@ const Seasson = styled.ul`
 
 const Container = styled.div`
   width: 300px;
-  min-height: 460px;
+  min-height: 450px;
   justify-content: center;
   background-image: url(${props => props.path});
   background-repeat: no-repeat;
   background-position: center top;
-  margin-bottom: 10px;
+  margin: 20px 0;
   &:hover > span {
     font-size: 20px;
+    color: white;
   }
 `;
 
 const Title = styled.h1`
   text-align: center;
-  width: 100%;
+  width: 300px;
   font-size: 18px;
   color: red;
 `;
 
-const Overview = styled.span`
-  width: 100%;
+const Overview = styled.p`
+  color: grey;
+  width: 300px;
   margin-top: 50px;
   font-size: 14px;
   text-align: justify;
