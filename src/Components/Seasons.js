@@ -10,7 +10,7 @@ const Container = styled.div`
   background-image: url(${props => props.path});
 `;
 
-const Container = styled.h1`
+const Title = styled.h1`
   position: fixed;
   color: #ffffff;
   top: 5px;
