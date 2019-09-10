@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
 import { tvApi } from "../api";
 
+const Container = styled.div`
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  background-image: url(${props => props.path});
+`;
+
+const Container = styled.h1`
+  position: fixed;
+  color: #ffffff;
+  top: 5px;
+`;
+
 const SeasonInfo = ({ name, path, overview }) => (
-  <>
-    <h1>Name : {`${name}`}</h1>
-    <img src={`${path}`} width="150px" />
-    <p>Overview : {`${overview}`}</p>
-  </>
+  <Container path={`${path}`}>
+    <Title>Name : {`${name}`}</Title>
+  </Container>
+  <p>Overview : {`${overview}`}</p>
 );
 
 const Seasons = ({ match }) => {
