@@ -9,4 +9,6 @@ This repository was made following class by [Nomad Academy Nomfix Class](https:/
 
 # Website
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/17c5db91-f7be-40a8-bf69-1932b2872516/deploy-status)](https://app.netlify.com/sites/nomflix-handson/deploys)
+
 [https://relaxed-colden-1c0d1d.netlify.com](https://relaxed-colden-1c0d1d.netlify.com)
