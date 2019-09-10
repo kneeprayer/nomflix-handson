@@ -31,7 +31,7 @@ const Title = styled.h1`
 
 const Overview = styled.span`
   width: 100%;
-  margin-top 50px;
+  margin-top: 50px;
   font-size: 14px;
   text-align: justify;
   vertical-align: text-bottom;
