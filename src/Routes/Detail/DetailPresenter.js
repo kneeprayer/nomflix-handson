@@ -6,6 +6,7 @@ import Helmet from "react-helmet";
 import Loader from "../../Components/Loader";
 import Videos from "../../Components/Videos";
 import Productions from "../../Components/Productions";
+import Seasons from "../../Components/Seasons";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -55,7 +56,7 @@ const Title = styled.h3`
 `;
 
 const IMDb = styled.span`
-  margin: 3px 20px;
+  margin: 6px 15px;
 `;
 
 const ItemContainer = styled.div`
@@ -89,10 +90,11 @@ const Itemli = styled.li`
   text-transform: uppercase;
   font-weight: 600;
   border: 2px solid #34495e;
-  padding: 5px;
+  padding: 10px;
   border-radius: 3px;
   background-color: ${props => (props.active ? "#34495e" : "transparent")};
   color: white;
+  min-width: 80px;
 `;
 
 const DetailPresenter = withRouter(({ location: { pathname }, result, loading }) =>
@@ -172,16 +174,8 @@ const DetailPresenter = withRouter(({ location: { pathname }, result, loading })
                   Productions
                 </Link>
               </Itemli>
-              <Itemli
-                active={
-                  result.original_title
-                    ? pathname === `/movie/${result.id}/productions`
-                    : pathname === `/show/${result.id}/productions`
-                }
-              >
-                <Link to={result.original_title ? `/movie/${result.id}/productions` : `/show/${result.id}/productions`}>
-                  Productions
-                </Link>
+              <Itemli active={result.original_title ? false : pathname === `/show/${result.id}/seasons`}>
+                <Link to={result.original_title ? false : `/show/${result.id}/seasons`}>Seasons</Link>
               </Itemli>
             </List>
           </InsideMenu>
@@ -191,6 +185,7 @@ const DetailPresenter = withRouter(({ location: { pathname }, result, loading })
             exact
             component={Productions}
           />
+          {parseInt(result.number_of_seasons) > 0 && <Route path={`/show/:id/seasons`} exact component={Seasons} />}
         </Data>
       </Content>
     </Container>
