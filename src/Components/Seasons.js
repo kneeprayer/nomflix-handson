@@ -11,16 +11,18 @@ import { tvApi } from "../api";
 const Container = styled.div`
   display: flex;
   width: 300px;
+  height: 500px;
   justify-content: center;
   background-image: url(${props => props.path});
   margin-bottom: 10px;
+  &:hover {
+    height: 800px;
+  }
 `;
 
 const Title = styled.h1``;
 
-const Overview = styled.span`
-  justify-content: center;
-`;
+const Overview = styled.span``;
 
 const SeasonInfo = ({ name, path, overview }) => (
   <Container path={path ? `https://image.tmdb.org/t/p/w300${path}` : require("../assets/noPosterSmall.jpg")}>
