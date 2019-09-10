@@ -11,18 +11,25 @@ import { tvApi } from "../api";
 const Container = styled.div`
   display: flex;
   width: 300px;
-  height: 500px;
+  height: 480px;
   justify-content: center;
   background-image: url(${props => props.path});
+  background-repeat: no-repeat;
+  background-position: center top;
   margin-bottom: 10px;
   &:hover {
-    height: 800px;
+    width: 500px;
   }
 `;
 
-const Title = styled.h1``;
+const Title = styled.h1`
+  font-size: 18px;
+`;
 
-const Overview = styled.span``;
+const Overview = styled.span`
+  margin-top 10px;
+  font-size: 8px;
+`;
 
 const SeasonInfo = ({ name, path, overview }) => (
   <Container path={path ? `https://image.tmdb.org/t/p/w300${path}` : require("../assets/noPosterSmall.jpg")}>
