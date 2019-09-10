@@ -17,16 +17,24 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center top;
   margin-bottom: 10px;
+  &:hover > span {
+    font-size: 20px;
+  }
 `;
 
 const Title = styled.h1`
+  text-align: center;
+  width: 100%;
   font-size: 18px;
   color: red;
 `;
 
 const Overview = styled.span`
+  width: 100%;
   margin-top 50px;
   font-size: 14px;
+  text-align: justify;
+  vertical-align: text-bottom;
 `;
 
 const SeasonInfo = ({ name, path, overview }) => (
