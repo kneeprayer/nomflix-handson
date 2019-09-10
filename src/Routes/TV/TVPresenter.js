@@ -62,6 +62,21 @@ const TVPresenter = ({ topRated, popular, airingToday, loading, error }) => (
             ))}
           </Section>
         )}
+        {popular && popular.length > 0 && (
+          <Section title="Popular">
+            {popular.map(show => (
+              <Poster
+                key={show.id}
+                id={show.id}
+                show
+                imgUrl={show.poster_path}
+                title={show.original_name}
+                rating={show.vote_average}
+                year={show.first_air_date && show.first_air_date.substring(0, 4)}
+              />
+            ))}
+          </Section>
+        )}
         {error && <Message color="#e74c3c" text={error} />}
       </Container>
     )}

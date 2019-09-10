@@ -1,8 +1,11 @@
 import React from "react";
+import { Link, Route, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Helmet from "react-helmet";
 import Loader from "../../Components/Loader";
+import Videos from "../../Components/Videos";
+import Productions from "../../Components/Productions";
 
 const Container = styled.div`
   height: calc(100vh - 50px);
@@ -68,7 +71,27 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const DetailPresenter = ({ result, loading }) =>
+const InsideMenu = styled.div`
+  margin: 20px 0px;
+`;
+
+const List = styled.ul`
+  display: flex;
+`;
+
+const Itemli = styled.li`
+  cursor: pointer;
+  margin-right: 20px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 2px solid #34495e;
+  padding: 5px;
+  border-radius: 3px;
+  background-color: ${props => (props.active ? "#34495e" : "transparent")};
+  color: white;
+`;
+
+const DetailPresenter = withRouter(({ location: { pathname }, result, loading }) =>
   loading ? (
     <>
       <Helmet>
@@ -107,10 +130,43 @@ const DetailPresenter = ({ result, loading }) =>
             </Item>
           </ItemContainer>
           <Overview>{result.overview}</Overview>
+          <InsideMenu>
+            <List>
+              <Itemli
+                active={
+                  result.original_title
+                    ? pathname === `/movie/${result.id}/videos`
+                    : pathname === `/show/${result.id}/videos`
+                }
+              >
+                <Link to={result.original_title ? `/movie/${result.id}/videos` : `/show/${result.id}/videos`}>
+                  Videos
+                </Link>
+              </Itemli>
+              <Itemli
+                active={
+                  result.original_title
+                    ? pathname === `/movie/${result.id}/productions`
+                    : pathname === `/show/${result.id}/productions`
+                }
+              >
+                <Link to={result.original_title ? `/movie/${result.id}/productions` : `/show/${result.id}/productions`}>
+                  Productions
+                </Link>
+              </Itemli>
+            </List>
+          </InsideMenu>
+          <Route path={result.original_title ? `/movie/:id/videos` : `/show/:id/videos`} exact component={Videos} />
+          <Route
+            path={result.original_title ? `/movie/:id/productions` : `/show/:id/productions`}
+            exact
+            component={Productions}
+          />
         </Data>
       </Content>
     </Container>
-  );
+  )
+);
 
 DetailPresenter.propTypes = {
   result: PropTypes.object,
