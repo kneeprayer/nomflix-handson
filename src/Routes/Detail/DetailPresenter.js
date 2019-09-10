@@ -175,7 +175,7 @@ const DetailPresenter = withRouter(({ location: { pathname }, result, loading })
                   Productions
                 </Link>
               </Itemli>
-              {result.original_title && (
+              {parseInt(result.number_of_seasons) > 0 && (
                 <Itemli active={result.original_title ? false : pathname === `/show/${result.id}/seasons`}>
                   <Link to={result.original_title ? false : `/show/${result.id}/seasons`}>Seasons</Link>
                 </Itemli>
@@ -188,7 +188,7 @@ const DetailPresenter = withRouter(({ location: { pathname }, result, loading })
             exact
             component={Productions}
           />
-          {parseInt(result.number_of_seasons) > 0 && <Route path={`/show/:id/seasons`} exact component={Seasons} />}
+          <Route path={`/show/:id/seasons`} exact component={Seasons} />
         </Data>
       </Content>
     </Container>
