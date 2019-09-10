@@ -22,10 +22,7 @@ const Seasons = ({ match }) => {
       {seasons &&
         seasons.map(item => {
           item.name && <h1>{`Name : ${item.name}`}</h1>;
-          item.poster_path && (
-            // eslint-disable-next-line react/jsx-key
-            <img src={`//image.tmdb.org/t/p/w300/${item.poster_path}`} width="150px" />
-          );
+          item.poster_path && <img src={`//image.tmdb.org/t/p/w300/${item.poster_path}`} width="150px" />;
           item.overview && <p>{`Overview : ${item.overview}`}</p>;
         })}
     </div>
