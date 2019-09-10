@@ -8,6 +8,7 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   background-image: url(${props => props.path});
+  margin-bottom: 500px;
 `;
 
 const Title = styled.h1`
@@ -16,11 +17,20 @@ const Title = styled.h1`
   top: 5px;
 `;
 
+const Overview = styled.h1`
+  position: fixed;
+  color: #000000;
+  justify-content: center;
+  bottom: -5px;
+`;
+
 const SeasonInfo = ({ name, path, overview }) => (
-  <Container path={`${path}`}>
-    <Title>Name : {`${name}`}</Title>
-  </Container>
-  <p>Overview : {`${overview}`}</p>
+  <>
+    <Container path={path}>
+      <Title>{name}</Title>
+      <Overview>{overview}</Overview>
+    </Container>
+  </>
 );
 
 const Seasons = ({ match }) => {
