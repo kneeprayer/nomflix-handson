@@ -19,18 +19,14 @@ const Seasons = ({ match }) => {
 
   return (
     <div>
-      <ul>
-        {seasons &&
-          seasons.map(
-            item =>
-              item.poster_path && (
-                // eslint-disable-next-line react/jsx-key
-                <li>
-                  <img src={`//image.tmdb.org/t/p/w300/${item.poster_path}`} width="150px" />
-                </li>
-              )
-          )}
-      </ul>
+      {seasons &&
+        seasons.map(
+          item =>
+            item.poster_path && (
+              // eslint-disable-next-line react/jsx-key
+              <img src={`//image.tmdb.org/t/p/w300/${item.poster_path}`} width="150px" />
+            )
+        )}
     </div>
   );
 };
