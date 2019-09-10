@@ -62,3 +62,6 @@ build/
 
 # yarn lock file
 yarn.lock
+
+# mac
+.DS_Store
