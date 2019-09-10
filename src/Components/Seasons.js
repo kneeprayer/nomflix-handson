@@ -11,21 +11,15 @@ import { tvApi } from "../api";
 const Container = styled.div`
   display: flex;
   width: 300px;
-  height: 100%;
   justify-content: center;
   background-image: url(${props => props.path});
   margin-bottom: 10px;
 `;
 
-const Title = styled.h1`
-  color: #000000;
-  top: 5px;
-`;
+const Title = styled.h1``;
 
 const Overview = styled.span`
-  color: #000000;
   justify-content: center;
-  bottom: -5px;
 `;
 
 const SeasonInfo = ({ name, path, overview }) => (
