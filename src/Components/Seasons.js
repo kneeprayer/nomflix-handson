@@ -8,8 +8,11 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { tvApi } from "../api";
 
-const Container = styled.div`
+const Seasson = styled.ul`
   display: flex;
+`;
+
+const Container = styled.div`
   width: 300px;
   min-height: 460px;
   justify-content: center;
@@ -64,10 +67,10 @@ const Seasons = ({ match }) => {
 
   return (
     <div>
-      <ul>
+      <Seasson>
         {seasons &&
           seasons.map(item => <SeasonInfo name={item.name} path={item.poster_path} overview={item.overview} />)}
-      </ul>
+      </Seasson>
     </div>
   );
 };
