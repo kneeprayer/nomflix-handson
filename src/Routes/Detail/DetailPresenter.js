@@ -94,7 +94,8 @@ const Itemli = styled.li`
   border-radius: 3px;
   background-color: ${props => (props.active ? "#34495e" : "transparent")};
   color: white;
-  min-width: 80px;
+  min-width: 120px;
+  text-align: center;
 `;
 
 const DetailPresenter = withRouter(({ location: { pathname }, result, loading }) =>
@@ -174,9 +175,11 @@ const DetailPresenter = withRouter(({ location: { pathname }, result, loading })
                   Productions
                 </Link>
               </Itemli>
-              <Itemli active={result.original_title ? false : pathname === `/show/${result.id}/seasons`}>
-                <Link to={result.original_title ? false : `/show/${result.id}/seasons`}>Seasons</Link>
-              </Itemli>
+              {result.original_title && (
+                <Itemli active={result.original_title ? false : pathname === `/show/${result.id}/seasons`}>
+                  <Link to={result.original_title ? false : `/show/${result.id}/seasons`}>Seasons</Link>
+                </Itemli>
+              )}
             </List>
           </InsideMenu>
           <Route path={result.original_title ? `/movie/:id/videos` : `/show/:id/videos`} exact component={Videos} />

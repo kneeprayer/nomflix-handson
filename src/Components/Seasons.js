@@ -17,8 +17,22 @@ const Seasons = ({ match }) => {
     callApi();
   }, []);
 
-  // eslint-disable-next-line react/jsx-key
-  return <div>{seasons && seasons.map(item => <img src={`//image.tmdb.org/t/p/w300/${item.poster_path}`} />)}</div>;
+  return (
+    <div>
+      <ul>
+        {seasons &&
+          seasons.map(
+            item =>
+              item.poster_path && (
+                // eslint-disable-next-line react/jsx-key
+                <li>
+                  <img src={`//image.tmdb.org/t/p/w300/${item.poster_path}`} width="150px" />
+                </li>
+              )
+          )}
+      </ul>
+    </div>
+  );
 };
 
 export default Seasons;
