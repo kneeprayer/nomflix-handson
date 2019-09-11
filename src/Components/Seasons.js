@@ -20,7 +20,7 @@ const Container = styled.div`
   justify-content: center;
   background-image: url(${props => props.path});
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: center top;
   margin: 20px 10px;
   -webkit-transition: width 0.8s, margin 1s, transform 1s; /* Safari prior 6.1 */
