@@ -23,10 +23,11 @@ const Container = styled.div`
   background-size: auto;
   background-position: center top;
   margin: 20px 10px;
-  -webkit-transition: width 0.5s; /* Safari prior 6.1 */
-  transition: width 0.5s;
+  -webkit-transition: width 0.8s; /* Safari prior 6.1 */
+  transition: width 0.8s;
   &:hover {
     width: 350px;
+    height: 520px;
   }
 
   &:hover > p {
