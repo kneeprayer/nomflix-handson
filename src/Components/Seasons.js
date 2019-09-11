@@ -10,6 +10,8 @@ import { tvApi } from "../api";
 
 const Seasson = styled.ul`
   display: flex;
+  flex-wrap: wrap;
+  align-items: strach;
 `;
 
 const Container = styled.div`
@@ -18,11 +20,16 @@ const Container = styled.div`
   justify-content: center;
   background-image: url(${props => props.path});
   background-repeat: no-repeat;
+  background-size: auto;
   background-position: center top;
   margin: 20px 10;
   padding: 10px;
+  -webkit-transition: width 0.5s; /* Safari prior 6.1 */
+  transition: width 0.5s;
   &:hover > p {
     color: white;
+    font-weight: 600;
+    width: 350px;
   }
 `;
 
@@ -36,7 +43,7 @@ const Title = styled.h1`
 const Overview = styled.p`
   color: grey;
   width: 300px;
-  margin-top: 50px;
+  margin-top: 60px;
   font-size: 14px;
   text-align: justify;
   vertical-align: text-bottom;
