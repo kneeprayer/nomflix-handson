@@ -23,8 +23,9 @@ const Container = styled.div`
   background-size: cover;
   background-position: center top;
   margin: 20px 10px;
-  -webkit-transition: width 0.8s, height 0.8s, margin 0.8s, transform 0.8s;
-  transition: width 0.8s, height 0.8s, margin 0.8s, transform 0.8s;
+  padding: 20px 10px;
+  -webkit-transition: width 0.8s, height 0.8s, transform 0.8s;
+  transition: width 0.8s, height 0.8s, transform 0.8s;
   transition-timing-function: ease-in-out;
   &:hover {
     width: 350px;
@@ -33,7 +34,6 @@ const Container = styled.div`
   &:hover > h1 {
     color: red;
     font-weight: 800;
-    margin-top: 50px;
   }
   &:hover > p {
     color: white;
@@ -48,7 +48,6 @@ const Title = styled.h1`
   font-size: 24px;
   font-weight: 600;
   color: white;
-  margin-top: 20px;
   -webkit-transition: width 0.8s, margin 1s, transform 1s;
   transition: width 0.8s, margin 1s, transform 1s;
   transition-timing-function: ease-in-out;
