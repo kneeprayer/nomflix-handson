@@ -30,7 +30,11 @@ const Container = styled.div`
     width: 350px;
     height: 520px;
   }
-
+  &:hover > h1 {
+    color: red;
+    font-weight: 800;
+    margin-top: 50px;
+  }
   &:hover > p {
     color: white;
     font-weight: 600;
@@ -41,9 +45,13 @@ const Container = styled.div`
 const Title = styled.h1`
   text-align: center;
   width: 300px;
-  font-size: 18px;
-  color: red;
-  margin-top: 10px;
+  font-size: 24px;
+  font-weight: 600;
+  color: white;
+  margin-top: 20px;
+  -webkit-transition: width 0.8s, margin 1s, transform 1s; /* Safari prior 6.1 */
+  transition: width 0.8s, margin 1s, transform 1s;
+  transition-timing-function: ease-in-out;
 `;
 
 const Overview = styled.p`
@@ -53,6 +61,9 @@ const Overview = styled.p`
   font-size: 14px;
   text-align: justify;
   vertical-align: text-bottom;
+  -webkit-transition: width 0.8s, margin 1s, transform 1s; /* Safari prior 6.1 */
+  transition: width 0.8s, margin 1s, transform 1s;
+  transition-timing-function: ease-in-out;
 `;
 
 const SeasonInfo = ({ name, path, overview }) => (

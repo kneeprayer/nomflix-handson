@@ -36,7 +36,7 @@
       "git add"
     ]
   },
-  "homepage": "https://kneeprayer.github.io/nomflix-handson",
+  "homepage": "https://nomflix-handson.netlify.com",
   "browserslist": [
     ">0.2%",
     "not dead",
