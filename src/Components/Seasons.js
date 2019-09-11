@@ -23,8 +23,8 @@ const Container = styled.div`
   background-size: cover;
   background-position: center top;
   margin: 20px 10px;
-  -webkit-transition: width 0.8s, margin 1s, transform 1s; /* Safari prior 6.1 */
-  transition: width 0.8s, margin 1s, transform 1s;
+  -webkit-transition: width 0.8s, height 0.8s, margin 0.8s, transform 0.8s;
+  transition: width 0.8s, height 0.8s, margin 0.8s, transform 0.8s;
   transition-timing-function: ease-in-out;
   &:hover {
     width: 350px;
@@ -49,7 +49,7 @@ const Title = styled.h1`
   font-weight: 600;
   color: white;
   margin-top: 20px;
-  -webkit-transition: width 0.8s, margin 1s, transform 1s; /* Safari prior 6.1 */
+  -webkit-transition: width 0.8s, margin 1s, transform 1s;
   transition: width 0.8s, margin 1s, transform 1s;
   transition-timing-function: ease-in-out;
 `;
@@ -61,7 +61,7 @@ const Overview = styled.p`
   font-size: 14px;
   text-align: justify;
   vertical-align: text-bottom;
-  -webkit-transition: width 0.8s, margin 1s, transform 1s; /* Safari prior 6.1 */
+  -webkit-transition: width 0.8s, margin 1s, transform 1s;
   transition: width 0.8s, margin 1s, transform 1s;
   transition-timing-function: ease-in-out;
 `;
