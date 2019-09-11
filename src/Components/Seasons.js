@@ -22,14 +22,17 @@ const Container = styled.div`
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center top;
-  margin: 20px 10;
-  padding: 10px;
+  margin: 20px 10px;
   -webkit-transition: width 0.5s; /* Safari prior 6.1 */
   transition: width 0.5s;
+  &:hover {
+    width: 350px;
+  }
+
   &:hover > p {
     color: white;
     font-weight: 600;
-    width: 350px;
+    margin-top: 150px;
   }
 `;
 
@@ -38,12 +41,13 @@ const Title = styled.h1`
   width: 300px;
   font-size: 18px;
   color: red;
+  margin-top: 10px;
 `;
 
 const Overview = styled.p`
   color: grey;
   width: 300px;
-  margin-top: 60px;
+  margin-top: 100px;
   font-size: 14px;
   text-align: justify;
   vertical-align: text-bottom;
