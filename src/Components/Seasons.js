@@ -23,8 +23,9 @@ const Container = styled.div`
   background-size: auto;
   background-position: center top;
   margin: 20px 10px;
-  -webkit-transition: width 0.8s; /* Safari prior 6.1 */
-  transition: width 0.8s;
+  -webkit-transition: width 0.8s, margin 1s, transform 1s; /* Safari prior 6.1 */
+  transition: width 0.8s, margin 1s, transform 1s;
+  transition-timing-function: ease-in-out;
   &:hover {
     width: 350px;
     height: 520px;
